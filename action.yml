@@ -1,0 +1,14 @@
+name: 'kotlin'
+description: 'Environment with Kotlin compiler '
+inputs:
+  command:
+    description: 'Command'
+    required: true
+    default: 'kotlin -version'
+runs:
+  using: 'docker'
+  image: 'docker://zenika/kotlin:1.4-alpine'
+  args:
+    - sh
+    - -c
+    - ${{ inputs.command }}
